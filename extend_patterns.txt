@@ -1,0 +1,13 @@
+Extended patterns used to match files.
+
+To turn on extended globbing that required to use extended patterns, do
+shopt -s extglob
+To unset it, do
+shopt -u extglob
+
+Pattern,	Description,	Example Pattern,	Explaination, Matches
+!(patterns), Match anything that does not match the 'patterns', !(photo).db, Match filenames without `photo` but next with `.db`, photophoto.db photos.db photoss.db photosss.db
+?(patterns), Match zero or one occurances of the 'patterns',  photo?(photo).db, Match filename with `photo` but next with optional `photo`, photo.db photophoto.db
+*(patterns), Match zero or more occurances of the 'patterns', photo*(s).t*, Match filenames with `photo` but next 0 or more occurances of `s`, photo.txt photos.txt photoss.txt photosss.txt
++(patterns), Match one or more occurances of the 'patterns', photo+(s).txt, Match filenames with `photo` but next 1 or more occurances of `s`, photos.txt	photoss.txt	photosss.txt
+@(patterns), Match one occurance of the 'patterns', photo@(s).db, Match filenames with `photo` but next exactly one occurance of `s`, photos.db
