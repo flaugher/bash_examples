@@ -13,7 +13,7 @@ case "$user_planet" in
     ;;
   Mars )  # You can have a space
     echo "Mars is too red for me!  haha!";;  # Can be on same line
-  *)
+  *)  # Exit status code = 0
     echo "Come back when you have a favorite planet. :-("
     ;;
 esac
